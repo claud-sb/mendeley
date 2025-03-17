@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-separator">
+  <info>
+    <title>Custom Numeric Alphabetical</title>
+    <id>http://www.zotero.org/styles/custom-numeric-alphabetical</id>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <issn>0021-9290</issn>  <!-- Example ISSN, adjust as needed -->
+    <updated>2023-11-23T14:47:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <sort>
+      <key variable="author"/>
+    </sort>
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text variable="author" suffix=". "/>
+      <choose>
+        <if type="article-journal">
+          <text variable="title" suffix=". "/>
+          <text variable="container-title" suffix=", "/>
+          <text variable="issued" date-parts="year" suffix=", "/>
+          <text variable="volume" suffix="("/>
+          <text variable="issue" suffix="):"/>
+          <text variable="page"/>
+          <text variable="DOI" prefix=". DOI: "/>
+        </if>
+        <if type="book">
+          <text variable="title" suffix=". "/>
+          <text variable="publisher" suffix=", "/>
+          <text variable="issued" date-parts="year"/>
+        </if>
+        <if type="webpage">
+          <text variable="title" suffix=". "/>
+          <text variable="container-title" suffix=", "/>
+          <text variable="URL" prefix=" "/>
+          <date variable="accessed" form="text" prefix=", Accessed "/>
+        </if>
+        <if type="thesis">
+          <text variable="title" suffix=". "/>
+          <text variable="genre" suffix=". "/>
+          <text variable="publisher" suffix=", "/>
+          <text variable="issued" date-parts="year"/>
+        </if>
+        <else>
+          <text variable="title"/>  <!-- Fallback for other types -->
+        </else>
+      </choose>
+      <text value="."/>
+    </layout>
+  </bibliography>
+</style>
